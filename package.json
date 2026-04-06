@@ -1,0 +1,21 @@
+{
+  "name": "smartsheet-javascript-sdk-examples",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Examples demonstrating the Smartsheet JavaScript SDK",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "example:import-check": "node examples/import-check.js",
+    "example:workspace-children": "node examples/get-workspace-children.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "smartsheet": "^4.7.2"
+  },
+  "volta": {
+    "node": "20.19.0"
+  }
+}
