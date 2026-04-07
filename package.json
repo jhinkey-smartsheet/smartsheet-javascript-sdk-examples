@@ -9,6 +9,7 @@
   },
   "scripts": {
     "example:import-check": "node examples/import-check.js",
+    "example:legacy-workspace": "node examples/legacy-get-workspace.js",
     "example:workspace-children": "node examples/get-workspace-children.js",
     "test": "node --test"
   },

@@ -27,11 +27,11 @@ const client = smartsheet.createClient({ accessToken: token });
 
 try {
   const workspace = await client.workspaces.getWorkspaceMetadata({ workspaceId });
-  const sheet = [];
-  const report = [];
-  const sight = [];
-  const folder = [];
-  const template = [];
+  const sheets = [];
+  const reports = [];
+  const sights = [];
+  const folders = [];
+  const templates = [];
   let lastKey = '';
 
   do {
@@ -43,19 +43,19 @@ try {
     for (const child of children) {
       switch (child?.resourceType) {
         case 'sheet':
-          sheet.push(child);
+          sheets.push(child);
           break;
         case 'report':
-          report.push(child);
+          reports.push(child);
           break;
         case 'sight':
-          sight.push(child);
+          sights.push(child);
           break;
         case 'folder':
-          folder.push(child);
+          folders.push(child);
           break;
         case 'template':
-          template.push(child);
+          templates.push(child);
           break;
         default:
           break;
@@ -64,7 +64,7 @@ try {
     lastKey = page?.lastKey;
   } while (lastKey);
 
-  const data = { workspace, sheet, report, sight, folder, template };
+  const data = { workspace, sheets, reports, sights, folders, templates };
   console.log(JSON.stringify(data, null, 2));
 } catch (err) {
   console.error(err);
