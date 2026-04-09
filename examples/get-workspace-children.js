@@ -27,6 +27,16 @@ const client = smartsheet.createClient({ accessToken: token });
 
 try {
   const workspace = await client.workspaces.getWorkspaceMetadata({ workspaceId });
+
+  console.log(
+    `Workspace: ${workspace.name},`,
+    `ID: ${workspace.id},`,
+    `Access Level: ${workspace.accessLevel},`,
+    `Permalink: ${workspace.permalink},`,
+    `Created At: ${workspace.createdAt},`,
+    `Modified At: ${workspace.modifiedAt}`
+  );
+
   const sheets = [];
   const reports = [];
   const sights = [];
